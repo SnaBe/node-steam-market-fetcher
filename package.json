@@ -1,7 +1,7 @@
 {
   "name": "steam-market-fetcher",
-  "version": "1.1.0",
-  "description": "A node module for fetching item prices, images and listings from the Steamcommunity market.",
+  "version": "1.1.2",
+  "description": "Asynchronous node module for fetching item prices, images and listings from the Steamcommunity market. ",
   "main": "index.js",
   "bin": {
     "steam-market-fetcher": "util.js"
