@@ -7,10 +7,25 @@
 [![license](https://img.shields.io/npm/l/steam-market-fetcher.svg)](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/LICENSE)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
 
-Install it from [npm](https://www.npmjs.com/package/bptf-listings):
+The steam-market-fetcher module lets you fetch item prices and images from the Steam community market. 
 
-    npm install bptf-listings
+**Have a question about the module or programming in general? *Do not create a GitHub issue.* GitHub issues are for feature requests and bug reports. Instead, send me an email. Such issues may be ignored!**
+
+## Installation
+
+Install it from [npm](https://www.npmjs.com/package/steam-market-fetcher):
+
+    npm install steam-market-fetcher
 
 ## Usage
 
-See the [examples](https://github.com/Nicklason/node-bptf-listings/tree/master/examples)
+See the [examples](https://github.com/Nicklason/node-steam-market-fetcher/tree/master/examples) folder for usage cases.
+
+The example folder includes:
+- Setting up a basic project
+- Initialize a new Steam Market Fetcher instance
+- Getting item prices & images for CS:GO, DOTA 2 & TF2
+
+## Documentation
+
+See the [Wiki](https://github.com/SnaBe/node-steam-bot-constructor/wiki) for further the documentation.
