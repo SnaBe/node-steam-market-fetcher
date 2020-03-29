@@ -29,4 +29,4 @@ See the [examples](https://github.com/SnaBe/node-steam-market-fetcher/tree/maste
 
 ## Documentation
 
-See the [Wiki](https://github.com/SnaBe/node-steam-bot-constructor/wiki) for further documentation.
+See the [Wiki](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
