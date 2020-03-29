@@ -13,7 +13,7 @@ The steam-market-fetcher module lets you fetch item prices and images from the S
 
 ## Installation
 
-Install it from [npm](https://www.npmjs.com/package/steam-market-fetcher):
+Install it using [npm](https://www.npmjs.com/package/steam-market-fetcher):
 
     npm install steam-market-fetcher
 
@@ -21,11 +21,10 @@ Install it from [npm](https://www.npmjs.com/package/steam-market-fetcher):
 
 See the [examples](https://github.com/Nicklason/node-steam-market-fetcher/tree/master/examples) folder for usage cases.
 
-The example folder includes:
 - Setting up a basic project
 - Initialize a new Steam Market Fetcher instance
 - Getting item prices & images for CS:GO, DOTA 2 & TF2
 
 ## Documentation
 
-See the [Wiki](https://github.com/SnaBe/node-steam-bot-constructor/wiki) for further the documentation.
+See the [Wiki](https://github.com/SnaBe/node-steam-bot-constructor/wiki) for further documentation.

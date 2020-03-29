@@ -1,0 +1,38 @@
+{
+  "name": "steam-market-fetcher",
+  "version": "1.0.0",
+  "description": "A node module for fetching item prices, images and listings from the Steamcommunity market.",
+  "main": "index.js",
+  "bin": {
+    "steam-market-fetcher": "util.js"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "node examples/usage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnaBe/node-steam-market-fetcher.git"
+  },
+  "keywords": [
+    "steam",
+    "community",
+    "market",
+    "prices",
+    "pricing",
+    "images",
+    "listings"
+  ],
+  "author": "Simon Snabe Sørensen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SnaBe/node-steam-market-fetcher/issues"
+  },
+  "homepage": "https://github.com/SnaBe/node-steam-market-fetcher#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
