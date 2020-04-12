@@ -1,15 +1,15 @@
-//Import pre-written resources 
+//Import pre-written data related resources 
 const currency = require('../resources/currency');
 const data = require('../resources/data');
 
 /**
  * Set the currency for a new instance based on the parsed currency option
- * @param {Object} option any currency code used by the Steamcommunity market, as a String
+ * @param {String} option any currency code used by the Steam Community Market, as a String
  * @returns {Number} a Number representing the currency code
  */
 function setCurrency (option) {
     //Return the currency code as a number
-    return (Object.values(currency).includes(option)) ? option : currency['USD'];
+    return (currency.hasOwnProperty(option)) ? currency[option] : currency['USD'];
 }
 
 /**
@@ -23,8 +23,8 @@ function setDataFormat (option) {
 }
 
 /**
- * Resize a Steamcommunity market listing url to a preferred image size
- * @param {String} image_url a default Steamcommunity market listing image
+ * Resize a Steam Community Market listing url to a preferred image size
+ * @param {String} image_url a default Steam Community Market listing image
  * @param {Number} px the size of the image in pixels
  * @returns {String} the resized image url
  */

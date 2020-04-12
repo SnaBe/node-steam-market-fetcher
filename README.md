@@ -1,13 +1,13 @@
 # node-steam-market-fetcher
 
-### Asynchronous node module for fetching item prices, images and listings from the Steamcommunity market. 
+### Asynchronous node module for fetching item prices, images and listings from the Steam Community Market. 
 [![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
 [![npm downloads](https://img.shields.io/npm/dm/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
 [![dependencies](https://img.shields.io/david/SnaBe/node-steam-market-fetcher.svg)](https://david-dm.org/SnaBe/node-steam-market-fetcher)
 [![license](https://img.shields.io/npm/l/steam-market-fetcher.svg)](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/LICENSE)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
 
-Steam-market-fetcher is an asynchronous node module that lets you fetch item prices and images from the Steam community market. 
+Steam-market-fetcher is an asynchronous node module that lets you fetch item prices, images and listings from the Steam Community Market. 
 
 **Have a question about the module or programming in general? *Do not create a GitHub issue.* GitHub issues are for feature requests and bug reports. Instead, send me an email. Such issues may be ignored!**
 
@@ -24,7 +24,7 @@ Install it using [npm](https://www.npmjs.com/package/steam-market-fetcher):
 See the [examples](https://github.com/SnaBe/node-steam-market-fetcher/tree/master/examples) folder for more usage cases.
 
 - Setting up a basic project
-- Initialize a new Steam Market Fetcher instance
+- Initialize a new Steam Market Fetcher instance, with custom options
 - Getting item prices & images for CS:GO, DOTA 2 & TF2
 
 ## Documentation
