@@ -15,7 +15,7 @@ Install it using [npm](https://www.npmjs.com/package/steam-market-fetcher):
 
 ## Testing
 
-    npm run test
+    npm test
 
 ## Basic usage
 
