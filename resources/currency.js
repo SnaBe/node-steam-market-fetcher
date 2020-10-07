@@ -6,7 +6,7 @@ module.exports = {
     'CHF': 4,
     'RUB': 5,
     'PLN': 6,
-    'ZAR': 7,
+    'BRL': 7,
     'JPY': 8,
     'SEK': 9,
     'IDR': 10,
