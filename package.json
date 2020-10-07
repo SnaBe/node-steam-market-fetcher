@@ -25,7 +25,8 @@
     "cdn",
     "listings",
     "data",
-    "items"
+    "items",
+    "module"
   ],
   "author": "Simon Sørensen",
   "license": "MIT",
