@@ -96,7 +96,7 @@ class SteamMarketFetcher {
     getItemPriceHistory (market_hash_name, appid, cookie) {
         return new Promise(async (resolve, reject) => {
             //Encode the endpoint URL to prevent unescaped characters
-            const endpoint = encodeURI(`https://steamcommunity.com/market/pricehistory/?country=DE&currency=${this.currency}&appid=${appid}&market_hash_name=${market_hash_name}`);
+            const endpoint = encodeURI(`https://steamcommunity.com/market/pricehistory/?currency=${this.currency}&appid=${appid}&market_hash_name=${market_hash_name}`);
 
             //Attempt to make a GET request to the Steam Community Market using Axios
             try {
