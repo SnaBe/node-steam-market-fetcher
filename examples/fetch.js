@@ -19,5 +19,8 @@ Fetcher.getItemImage('Fractal Horns of Inner Abysm', 570).then((image) => consol
 Fetcher.getItemPrice('Mann Co. Supply Crate Key', 440).then((price) => console.log(price)).catch((err) => console.log(err.message));
 Fetcher.getItemImage('Mann Co. Supply Crate Key', 440).then((image) => console.log(image)).catch((err) => console.log(err.message));
 
-//Fetch Steam Community Market listings for Team Fortress 2
-Fetcher.getMarketListings(440).then((market_listings) => console.log(`Got ${market_listings.length} market listings.`)).catch((err) => console.log(err.message));
+//Get the price history for a Factory New Gut Knife | Doppler
+Fetcher.getItemPriceHistory('★ Gut Knife | Doppler (Factory New)', 730, 'YOUR_COOKIE').then((prices) => console.log(prices)).catch((err) => console.log(err.message));
+
+//Fetch Steam Community Market listings for Team Fortress 2 items that are Unusual hats with Burning Flames effect. 
+Fetcher.getMarketListings(440, 0, 'Unusual Burning Flames', 1).then((market_listings) => console.log(`Found ${market_listings.length} market listings that include Unusual & Burning Flames.`)).catch((err) => console.log(err.message));
