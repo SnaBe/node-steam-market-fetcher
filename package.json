@@ -36,10 +36,12 @@
   "homepage": "https://github.com/SnaBe/node-steam-market-fetcher#readme",
   "dependencies": {
     "axios": "^0.21.0",
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "csgo-cdn": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.1.3"
+    "mocha": "^8.1.3",
+    "steam-user": "^4.19.12"
   }
 }
