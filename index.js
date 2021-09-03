@@ -80,7 +80,7 @@ class SteamMarketFetcher {
     }
 
     /**
-     * 
+     * Fetches an image from the first Steamcommunity market listing matching the `market_hash_name` argument.
      * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
@@ -136,7 +136,7 @@ class SteamMarketFetcher {
     }
 
     /**
-     * Get an item's price history from the listing matching the market_hash_name argument. Requires login!
+     * Get an item's price history from the Steamcommunity listing matching the `market_hash_name` argument. 
      * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
@@ -158,7 +158,7 @@ class SteamMarketFetcher {
         }
 
         // Type check the cookie parameter for matching a string
-        if (typeof cookie !== 'string') {
+        if (typeof cookie !== 'string' || cookie.length === 0) {
             // Throw an error in case the check failed
             throw new Error('The "cookie" parameter is not a string or missing.');
         }
@@ -192,11 +192,11 @@ class SteamMarketFetcher {
      * Get the current Steam Community Market listings for any given Steam app. 
      * @param { object } params An object of valid arguments for the getMarketListings method. All are "optional" and have default values.
      * @param { string } params.query The query value narrows down the search, optional parameter that defaults to none.
-     * @param { number } params.descriptions If set, includes the search in the item's description property.
+     * @param { number } params.descriptions If set to 1, includes the query in the item's description property.
      * @param { number } params.appid The app in which to fetch market listings for.
      * @param { number } params.start The market listing from which to start the request, optional parameter that defaults to 0 (the first items listed on the market for that app).
      * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
-     * @returns { Array<object> | Function } An array containg market listings matching the provided appid.
+     * @returns { Promise<array> | Function } An array containg market listings matching the provided appid.
     */
     getMarketListings ({ query = '', descriptions = 0, appid = 730, start = 0, callback } = {}) {
         // Type check the query parameter for matching a string

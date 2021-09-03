@@ -1,5 +1,5 @@
 # node-steam-market-fetcher
-An asynchronous node module for fetching item prices, images and listings from the Steam Community Market. 
+A Node.js wrapper for the Steamcommunity Market API.
 
 [![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
 [![npm downloads](https://img.shields.io/npm/dm/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
@@ -9,27 +9,85 @@ An asynchronous node module for fetching item prices, images and listings from t
 
 ## Installation
 
-Install it using [npm](https://www.npmjs.com/package/steam-market-fetcher):
+Using [npm](https://www.npmjs.com/package/steam-market-fetcher):
 
-    npm install steam-market-fetcher
+```bash
+$ npm install steam-market-fetcher
+```
+
+Using [yarn](https://yarnpkg.com/package/steam-market-fetcher):
+
+```bash
+$ yarn add steam-market-fetcher
+```
 
 ## Testing
 
-    npm test
+**Note**: Make sure you've supplied a valid `steamLoginSecure cookie` in the [test.js](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/test/test.js) file. 
 
-## Basic usage
+```bash
+$ npm test
+```
 
-    npm run fetch
+## Examples
 
-## Examples 
+### Importing with `CommonJS`
 
-There are some examples available in the [examples](https://github.com/SnaBe/node-steam-market-fetcher/tree/master/examples) directory.
+```js
+const SteamMarketFetcher = require('steam-market-fetcher');
+```
 
-- Setting up a basic project.
-- Initialize a new Steam Market Fetcher instance with custom or default options.
-- Getting item prices & images for CS:GO, TF2 and DOTA 2.
-- Getting Steam Community Market listings for CS:GO, TF2 or DOTA2.
+### or with `ES6's import` statement.
+
+```js
+import SteamMarketFetcher from 'steam-market-fetcher';
+```
+
+### Instantiating with the `currency` and `format` options.
+```js
+const Fetcher = new SteamMarketFetcher({ 
+    currency: 'EUR',
+    format: 'json'
+});
+```
+
+### Asynchronous requests with `callbacks`.
+
+```js
+Fetcher.getItemPrice({
+    market_hash_name: 'AK-47 | Redline (Field-Tested)',
+    appid: 730,
+    callback: (err, price) => {
+        if (err) throw err;
+
+        console.log(price);
+    }
+});
+```
+
+### Asynchronous requests with `async`/`await`.
+
+```js
+(async () => {
+    try {
+        const image = await Fetcher.getItemImage({ 
+            market_hash_name: 'Mann Co. Supply Crate Key', 
+            appid: 440
+        });
+
+        console.log(image);
+    } catch (error) {
+        console.error('An error occurred: ', error);
+    }
+})();
+```
 
 ## Documentation
 
-See the [Wiki](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
+See the [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
+
+## License
+
+[MIT](LICENSE)
+
+Copyright 2021, Simon S. Sørensen
