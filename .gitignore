@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Ignore csgo-cdn data
+# Ignore csgo-cdn data files
 data/

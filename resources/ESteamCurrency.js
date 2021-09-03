@@ -1,4 +1,4 @@
-//Currencies used by the Steam Community Market
+// Currencies used by the Steam Community Market
 module.exports = {
     'USD': 1,
     'GBP': 2,

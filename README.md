@@ -90,4 +90,4 @@ See the [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) fo
 
 [MIT](LICENSE)
 
-Copyright 2021, Simon S. Sørensen
+Copyright 2021, Simon Sørensen
