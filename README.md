@@ -84,7 +84,7 @@ Fetcher.getItemPrice({
 
 ## Documentation
 
-See the [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
+[Version 1.6.0](https://github.com/SnaBe/node-steam-market-fetcher/releases/tag/v1.6.0) includes breaking changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
 
 ## License
 
