@@ -3,7 +3,6 @@ A Node.js wrapper for the Steamcommunity Market API.
 
 [![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
 [![npm downloads](https://img.shields.io/npm/dm/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
-[![dependencies](https://img.shields.io/david/SnaBe/node-steam-market-fetcher.svg)](https://david-dm.org/SnaBe/node-steam-market-fetcher)
 [![license](https://img.shields.io/npm/l/steam-market-fetcher.svg)](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/LICENSE)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
 
