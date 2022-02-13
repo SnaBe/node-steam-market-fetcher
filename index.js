@@ -5,7 +5,7 @@ const axios = require('axios');
 const CSGOCdn = require('csgo-cdn');
 
 // Require some helper functions
-const Helpers = require('./lib/helpers');
+const Helpers = require('./helpers/index');
 
 /**
  * Steamcommunity Market class wrapper for fetching item prices, images and listings from the Steamcommunity Market.
