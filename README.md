@@ -1,5 +1,5 @@
 # steam-market-fetcher
-A Node.js wrapper for the Steamcommunity Market API.
+A Node.js wrapper for the Steam Community Market API.
 
 [![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
 [![node version](https://img.shields.io/node/v/steam-market-fetcher)](https://nodejs.org/en/about/releases/)

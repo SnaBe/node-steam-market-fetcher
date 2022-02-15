@@ -5,7 +5,7 @@ const axios = require('axios');
 const Helpers = require('./helpers/index');
 
 /**
- * Steamcommunity Market class wrapper for fetching item prices, images and listings from the Steamcommunity Market.
+ * Steam Community Market class wrapper for fetching item prices, images and listings from the Steam Community Market.
  */
 class SteamMarketFetcher {
     /**
@@ -31,12 +31,12 @@ class SteamMarketFetcher {
     }
     
     /**
-     * Get the Steamcommunity Market price from the listing matching the `market_hash_name` argument.
+     * Get the Steam Community Market price from the listing matching the `market_hash_name` argument.
      * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash name.
      * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
-     * @returns { Promise<object> | function } An object containing Steamcommunity price data matching the market_hash_name parameter.
+     * @returns { Promise<object> | function } An object containing Steam Community price data matching the market_hash_name parameter.
     */
     getItemPrice ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
@@ -51,7 +51,7 @@ class SteamMarketFetcher {
             throw new Error('The "appid" parameter is not a number or missing.');
         }
 
-        // Encode the Steamcommunity Market endpoint for handling items with unique characters in their market_hash_name
+        // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
         const endpoint = encodeURI(`http://steamcommunity.com/market/priceoverview/?market_hash_name=${market_hash_name}&appid=${appid}&currency=${this.currency}`);
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
@@ -77,13 +77,13 @@ class SteamMarketFetcher {
     }
 
     /**
-     * Fetches an image from the first Steamcommunity market listing matching the `market_hash_name` argument.
+     * Fetches an image from the first Steam Community market listing matching the `market_hash_name` argument.
      * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { number } params.px The desired size of the item image in pixels, this is optional and defaults to 360px.
      * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
-     * @returns { Promise<string> | Function } A Steamcommunity or Steam CDN URL of the item image.
+     * @returns { Promise<string> | Function } A Steam Community or Steam CDN URL of the item image.
     */
     getItemImage ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, px = 360, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
@@ -104,12 +104,12 @@ class SteamMarketFetcher {
             throw new Error('The "px" parameter is not a number or missing.');
         }
 
-        // Encode the Steamcommunity Market endpoint for handling items with unique characters in their market_hash_name
+        // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
         const endpoint = encodeURI(`http://steamcommunity.com/market/listings/${appid}/${market_hash_name}/render?start=0&count=1&currency=${this.currency}&format=${this.format}`);
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
         return axios.get(endpoint).then(response => {
-            // Get the item image from a Steamcommunity listing or the Steam CDN
+            // Get the item image from a Steam Community listing or the Steam CDN
             const listingImage = Helpers.getImageFromListing(this.CDN, market_hash_name, appid, response.data.results_html, px); 
 
             // Handle the callback parameter for returning the response object
@@ -133,11 +133,11 @@ class SteamMarketFetcher {
     }
 
     /**
-     * Get an item's price history from the Steamcommunity listing matching the `market_hash_name` argument. 
+     * Get an item's price history from the Steam Community listing matching the `market_hash_name` argument. 
      * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
-     * @param { string } params.cookie A steamLoginSecure cookie from Steamcommunity.com session.
+     * @param { string } params.cookie A steamLoginSecure cookie from Steam Community.com session.
      * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise. 
      * @returns { Promise<object> | Function } The price history for the item matching the parameters.
     */
@@ -160,7 +160,7 @@ class SteamMarketFetcher {
             throw new Error('The "cookie" parameter is not a string or missing.');
         }
 
-        // Encode the Steamcommunity Market endpoint for handling items with unique characters in their market_hash_name
+        // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
         const endpoint = encodeURI(`https://steamcommunity.com/market/pricehistory/?currency=${this.currency}&appid=${appid}&market_hash_name=${market_hash_name}`);
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters

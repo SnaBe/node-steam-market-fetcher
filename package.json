@@ -1,7 +1,7 @@
 {
   "name": "steam-market-fetcher",
   "version": "1.6.0",
-  "description": "A Node.js wrapper for the Steamcommunity Market API.",
+  "description": "A Node.js wrapper for the Steam Community Market API.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 5000",
@@ -28,7 +28,7 @@
     "listings",
     "data",
     "items",
-    "module"
+    "package"
   ],
   "author": "Simon Sørensen",
   "license": "MIT",

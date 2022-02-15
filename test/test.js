@@ -22,10 +22,10 @@ describe('steam-market-fetcher tests', () => {
         });
     });
 
-    // Get price data for a Steamcommunity market item
+    // Get price data for a Steam Community Market item
     describe('getItemPrice', () => {
         // The function should return an object with the item's current price data
-        it('should return the Steamcommunity market price for a Field-Tested AK-47 Asiimov', (done) => {
+        it('should return the Steam Community market price for a Field-Tested AK-47 Asiimov', (done) => {
             // Get the price of the Field-Tested AK-47 Asiimov
             Fetcher.getItemPrice({ market_hash_name: 'AK-47 | Asiimov (Field-Tested)', appid: 730, callback: (err, data) => {
                 // Error getting currency data
@@ -43,7 +43,7 @@ describe('steam-market-fetcher tests', () => {
         });
     });
 
-    // Gets the item image  for a Steamcommunity market item
+    // Gets the item image  for a Steam Community Market item
     describe('getItemImage', () => {
         // The function should return a string with item's in-game image 
         it('should return an image of a Factory New Gut Knife Doppler', (done) => {
@@ -63,7 +63,7 @@ describe('steam-market-fetcher tests', () => {
         });
     });
 
-    // Gets the price history for a Steamcommunity market item
+    // Gets the price history for a Steam Community Market item
     // This test is skipped due to conflicts with the test workflow
     describe.skip('getItemPriceHistory', () => {
         // The function should return an array containing price history data for a Field-Tested AWP Wildfire
@@ -87,13 +87,13 @@ describe('steam-market-fetcher tests', () => {
         });
     });
 
-    // Gets a size of Steamcommunity market listings
+    // Gets a size of Steam Community Market listings
     describe('getMarketListings', () => {
-        // The function should return an array of Steamcommunity market listings
-        it('should return an array of Steamcommunity market listings', (done) => {
+        // The function should return an array of Steam Community Market listings
+        it('should return an array of Steam Community market listings', (done) => {
             // The market listings descriptions should include the query: Unusual Burning Flames
             Fetcher.getMarketListings({ query: 'Unusual Burning Flames', descriptions: 1, appid: 440, start: 0, callback: (err, data) => {
-                // Error getting Steamcommunity market listings
+                // Error getting Steam Community Market listings
                 if (err) return done(err);
 
                 // The response should have status code 200 (ok),

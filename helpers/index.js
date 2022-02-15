@@ -11,7 +11,7 @@ const data = require('../resources/ESteamDataFormat');
  */
 class Helpers {
     /**
-     * Set the currency to use for Steamcommunity market prices.
+     * Set the currency to use for Steam Community Market prices.
      * @param { string } option Any currency code used by the Steam Community Market represented as a String.
      * @returns { number } A number representing the matching currency code.
     */
@@ -41,10 +41,10 @@ class Helpers {
     }
 
     /**
-     * "Resize" a Steamcommunity Market listing URL to a preferred image size.
-     * @param { string } image A default Steamcommunity Market listing image URL.
+     * "Resize" a Steam Community Market listing URL to a preferred image size.
+     * @param { string } image A default Steam Community Market listing image URL.
      * @param { number } pixels The preferred image size in pixels.
-     * @returns { string } A new CDN URL with the preferred image size (Steamcommunity CDN only).
+     * @returns { string } A new CDN URL with the preferred image size (Steam Community CDN only).
      */
     static resizeImage(image, pixels) {
         // Check if the parsed image URL contains the default item listing size.
@@ -57,7 +57,7 @@ class Helpers {
      * Load an image froma HTML page.
      * @param { string | Buffer } html A HTML body represented as a String or Buffer.
      * @param { number } size The sife of the raw image in pixels.
-     * @returns { string } The image url from the Steamcommunity market listing.
+     * @returns { string } The image url from the Steam Community market listing.
      */
     static loadImage(html, size) {
         // Load the HTML using Cheerio
@@ -74,13 +74,13 @@ class Helpers {
     }
 
     /**
-     * Get an item's market image from a Steamcommunity Market listing.
+     * Get an item's market image from a Steam Community Market listing.
      * @param { CSGOCdn } cdn An instance of csgo-cdn that is ready.
      * @param { string } market_hash_name A marketable item's name.
      * @param { number } appid The unique app to the item's market_hash name.
      * @param { string | Buffer } html The HTML from the Axios response object.
      * @param { number } size The desired image size in pixels (Non-CDN only).
-     * @returns { string } The image retrieved from the Steamcommunity Market listing matching the market_hash_name and appid parameters.
+     * @returns { string } The image retrieved from the Steam Community Market listing matching the market_hash_name and appid parameters.
      */
     static getImageFromListing(cdn, market_hash_name, appid, html, size) {
         // Return the image
