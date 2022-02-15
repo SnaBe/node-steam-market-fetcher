@@ -1,9 +1,6 @@
 // Import the required dependencies for this class
 const axios = require('axios');
 
-// The csgo-cdn module provides the option for an alternative source for CS:GO item images.
-const CSGOCdn = require('csgo-cdn');
-
 // Require some helper functions
 const Helpers = require('./helpers/index');
 
