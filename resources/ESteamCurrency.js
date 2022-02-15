@@ -1,4 +1,5 @@
 // Currencies used by the Steam Community Market
+// USD is the default option
 module.exports = {
     'USD': 1,
     'GBP': 2,
