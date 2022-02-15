@@ -64,7 +64,8 @@ describe('steam-market-fetcher tests', () => {
     });
 
     // Gets the price history for a Steamcommunity market item
-    describe('getItemPriceHistory', () => {
+    // This test is skipped due to conflicts with the test workflow
+    describe.skip('getItemPriceHistory', () => {
         // The function should return an array containing price history data for a Field-Tested AWP Wildfire
         it('should return the price history of a Field-Tested AWP Wildfire', (done) => {
             // Get the price history for a Field-Tested AWP Wildfire
