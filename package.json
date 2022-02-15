@@ -4,7 +4,7 @@
   "description": "A Node.js wrapper for the Steam Community Market API.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000",
+    "test": "mocha --timeout 10000",
     "lint": "eslint --fix .",
     "fetch": "node examples/fetch.js",
     "cdn": "node examples/cdn.js"
