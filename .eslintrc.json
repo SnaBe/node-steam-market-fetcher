@@ -1,7 +1,4 @@
 {
-    "globals": {
-        "process": true
-    },
     "env": {
         "browser": true,
         "commonjs": true,
