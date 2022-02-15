@@ -17,7 +17,7 @@ class Helpers {
     */
     static setCurrency(option) {
         // Return the currency code as a number
-        return (currency.hasOwnProperty(option)) ? currency[option] : currency['USD'];
+        return (Object.prototype.hasOwnProperty.call(currency, option)) ? currency[option] : currency['USD'];
     }
 
     /**
