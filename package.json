@@ -3,11 +3,10 @@
   "version": "1.7.0",
   "description": "A Node.js wrapper for the Steam Community Market API.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha --timeout 10000",
-    "lint": "eslint --fix .",
-    "fetch": "node examples/fetch.js",
-    "cdn": "node examples/cdn.js"
+    "lint": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -38,15 +37,16 @@
   "homepage": "https://github.com/SnaBe/node-steam-market-fetcher#readme",
   "dependencies": {
     "axios": "^0.21.4",
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^1.0.0-rc.12",
     "csgo-cdn": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^8.9.0",
-    "mocha": "^9.2.0",
-    "steam-totp": "^2.1.1",
-    "steam-user": "^4.20.2"
+    "eslint": "^8.19.0",
+    "mocha": "^10.0.0",
+    "steam-totp": "^2.1.2",
+    "steam-user": "^4.24.3",
+    "typescript": "^4.7.4"
   },
   "engines": {
     "node": ">=14.0.0"
