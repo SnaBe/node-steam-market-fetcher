@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/SnaBe/node-steam-market-fetcher#readme",
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.12",
     "csgo-cdn": "^1.2.0"
   },
