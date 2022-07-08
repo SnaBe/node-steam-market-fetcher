@@ -10,10 +10,10 @@ const Helpers = require('./helpers/index');
 class SteamMarketFetcher {
     /**
      * Creates a new instance of the Steam Market Fetcher.
-     * @param { object } options An object containing valid constructor options.
+     * @param { any } options An object containing valid constructor options.
      * @param { string } options.currency Any currency used by the Steam Community Market, defaults to USD.
      * @param { string } options.format Any data format accepted by Steam, defaults to JSON.
-     * @param { CSGOCdn } options.CDN Steam CDN handler for CS:GO items and their image URLs.
+     * @param { any } options.CDN Steam CDN handler for CS:GO items and their image URLs.
      * @returns { SteamMarketFetcher } A fresh Steam Market Fetcher instance.
     */
     constructor (options) {
@@ -32,11 +32,11 @@ class SteamMarketFetcher {
     
     /**
      * Get the Steam Community Market price from the listing matching the `market_hash_name` argument.
-     * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash name.
-     * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
-     * @returns { Promise<object> | function } An object containing Steam Community price data matching the market_hash_name parameter.
+     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
+     * @returns { Promise<any> | Function } An object containing Steam Community price data matching the market_hash_name parameter.
     */
     getItemPrice ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
@@ -78,11 +78,11 @@ class SteamMarketFetcher {
 
     /**
      * Fetches an image from the first Steam Community market listing matching the `market_hash_name` argument.
-     * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { number } params.px The desired size of the item image in pixels, this is optional and defaults to 360px.
-     * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
+     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<string> | Function } A Steam Community or Steam CDN URL of the item image.
     */
     getItemImage ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, px = 360, callback } = {}) {
@@ -134,12 +134,12 @@ class SteamMarketFetcher {
 
     /**
      * Get an item's price history from the Steam Community listing matching the `market_hash_name` argument. 
-     * @param { object } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { string } params.cookie A steamLoginSecure cookie from Steam Community.com session.
-     * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise. 
-     * @returns { Promise<object> | Function } The price history for the item matching the parameters.
+     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise. 
+     * @returns { Promise<any> | Function } The price history for the item matching the parameters.
     */
     getItemPriceHistory ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, cookie, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
@@ -187,12 +187,12 @@ class SteamMarketFetcher {
 
     /**
      * Get the current Steam Community Market listings for any given Steam app. 
-     * @param { object } params An object of valid arguments for the getMarketListings method. All are "optional" and have default values.
+     * @param { any } params An object of valid arguments for the getMarketListings method. All are "optional" and have default values.
      * @param { string } params.query The query value narrows down the search, optional parameter that defaults to none.
      * @param { number } params.descriptions If set to 1, includes the query in the item's description property.
      * @param { number } params.appid The app in which to fetch market listings for.
      * @param { number } params.start The market listing from which to start the request, optional parameter that defaults to 0 (the first items listed on the market for that app).
-     * @param { function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
+     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<array> | Function } An array containg market listings matching the provided appid.
     */
     getMarketListings ({ query = '', descriptions = 0, appid = 730, start = 0, callback } = {}) {
