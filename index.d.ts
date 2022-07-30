@@ -1,7 +1,9 @@
+// Export the SteamMarketFetcher class
+export = SteamMarketFetcher;
 /**
  * Steam Community Market class wrapper for fetching item prices, images and listings from the Steam Community Market.
  */
-export declare class SteamMarketFetcher {
+declare class SteamMarketFetcher {
     /**
      * Creates a new instance of the Steam Market Fetcher.
      * @param { any } options An object containing valid constructor options.
@@ -10,7 +12,13 @@ export declare class SteamMarketFetcher {
      * @param { any } options.CDN Steam CDN handler for CS:GO items and their image URLs.
      * @returns { SteamMarketFetcher } A fresh Steam Market Fetcher instance.
     */
-    constructor(options: any): SteamMarketFetcher;
+    constructor(options: any);
+
+    // Constructor option types
+    currency: number;
+    format: string;
+    CDN: any;
+
     /**
      * Get the Steam Community Market price from the listing matching the `market_hash_name` argument.
      * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
