@@ -36,17 +36,17 @@
   },
   "homepage": "https://github.com/SnaBe/node-steam-market-fetcher#readme",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.1.0",
     "cheerio": "^1.0.0-rc.12",
     "csgo-cdn": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^8.19.0",
+    "eslint": "^8.24.0",
     "mocha": "^10.0.0",
     "steam-totp": "^2.1.2",
-    "steam-user": "^4.24.3",
-    "typescript": "^4.7.4"
+    "steam-user": "^4.25.0",
+    "typescript": "^4.8.4"
   },
   "engines": {
     "node": ">=14.0.0"
