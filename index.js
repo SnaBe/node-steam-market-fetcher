@@ -1,8 +1,8 @@
 // Import the required dependencies for this class
-const axios = require('axios');
+const axios = require('axios').default
 
-// Require some helper functions
-const Helpers = require('./helpers/index');
+// Require some utility functions
+const { setCurrency, setDataFormat, setCDN, getImageFromListing } = require('./lib/utils')
 
 /**
  * Steam Community Market class wrapper for fetching item prices, images and listings from the Steam Community Market.
@@ -18,16 +18,16 @@ class SteamMarketFetcher {
     */
     constructor (options) {
         // Options for different user needs
-        options = options || {};
+        options = options || {}
 
         // The currency in which to return Steam Community Market prices
-        this.currency = Helpers.setCurrency(options.currency); 
+        this.currency = setCurrency(options.currency) 
 
         // The format in which to return Steam Community Market data
-        this.format = Helpers.setDataFormat(options.format);
+        this.format = setDataFormat(options.format)
 
         // The CDN to use for CSGO items
-        this.CDN = Helpers.setCDN(options.CDN);
+        this.CDN = setCDN(options.CDN)
     }
     
     /**
@@ -42,38 +42,38 @@ class SteamMarketFetcher {
         // Type check the market_hash_name parameter for matching a string
         if (typeof market_hash_name !== 'string' || market_hash_name.length === 0) {
             // Throw an error in case the check failed
-            throw new Error('The "market_hash_name" parameter is not a valid string or missing.');
+            throw new Error('The "market_hash_name" parameter is not a valid string or missing.')
         }
 
         // Type check the appid parameter for matching a number
         if (typeof appid !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "appid" parameter is not a number or missing.');
+            throw new Error('The "appid" parameter is not a number or missing.')
         }
 
         // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
-        const endpoint = encodeURI(`http://steamcommunity.com/market/priceoverview/?market_hash_name=${market_hash_name}&appid=${appid}&currency=${this.currency}`);
+        const endpoint = encodeURI(`http://steamcommunity.com/market/priceoverview/?market_hash_name=${market_hash_name}&appid=${appid}&currency=${this.currency}`)
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
         return axios.get(endpoint).then(response => {
             // Handle the callback parameter for returning the response object
             if (typeof callback === 'function') {
                 // Return the callback with the response data
-                callback(null, response.data);
+                callback(null, response.data)
             }
 
             // Return the response data as a Promise
-            return response.data;
+            return response.data
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
-                callback(error, null);
+                callback(error, null)
             } else {
                 // Throw the error 
-                throw error;
+                throw error
             }            
-        });
+        })
     }
 
     /**
@@ -89,47 +89,47 @@ class SteamMarketFetcher {
         // Type check the market_hash_name parameter for matching a string
         if (typeof market_hash_name !== 'string' || market_hash_name.length === 0) {
             // Throw an error in case the check failed
-            throw new Error('The "market_hash_name" parameter is not a valid string or missing.');
+            throw new Error('The "market_hash_name" parameter is not a valid string or missing.')
         }
 
         // Type check the appid parameter for matching a number
         if (typeof appid !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "appid" parameter is not a number or missing.');
+            throw new Error('The "appid" parameter is not a number or missing.')
         }
 
         // Type check the px parameter for matching a number
         if (typeof px !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "px" parameter is not a number or missing.');
+            throw new Error('The "px" parameter is not a number or missing.')
         }
 
         // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
-        const endpoint = encodeURI(`http://steamcommunity.com/market/listings/${appid}/${market_hash_name}/render?start=0&count=1&currency=${this.currency}&format=${this.format}`);
+        const endpoint = encodeURI(`http://steamcommunity.com/market/listings/${appid}/${market_hash_name}/render?start=0&count=1&currency=${this.currency}&format=${this.format}`)
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
         return axios.get(endpoint).then(response => {
             // Get the item image from a Steam Community listing or the Steam CDN
-            const listingImage = Helpers.getImageFromListing(this.CDN, market_hash_name, appid, response.data.results_html, px); 
+            const listingImage = getImageFromListing(this.CDN, market_hash_name, appid, response.data.results_html, px)
 
             // Handle the callback parameter for returning the response object
             if (typeof callback === 'function') {
                 // Handle the callback parameter for returning the response object
-                callback(null, listingImage);
+                callback(null, listingImage)
             }
 
             // Return the image as a Promise
-            return listingImage;
+            return listingImage
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
-                callback(error, null);
+                callback(error, null)
             } else {
                 // Throw the error 
-                throw error;
+                throw error
             }
-        });
+        })
     }
 
     /**
@@ -138,51 +138,51 @@ class SteamMarketFetcher {
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { string } params.cookie A steamLoginSecure cookie from Steam Community.com session.
-     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise. 
+     * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<any> | Function } The price history for the item matching the parameters.
     */
     getItemPriceHistory ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, cookie, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
         if (typeof market_hash_name !== 'string' || market_hash_name.length === 0) {
             // Throw an error in case the check failed
-            throw new Error('The "market_hash_name" parameter is not a valid string or missing.');
+            throw new Error('The "market_hash_name" parameter is not a valid string or missing.')
         }
 
         // Type check the appid parameter for matching a number
         if (typeof appid !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "appid" parameter is not a number or missing.');
+            throw new Error('The "appid" parameter is not a number or missing.')
         }
 
         // Type check the cookie parameter for matching a string
         if (typeof cookie !== 'string' || cookie.length === 0) {
             // Throw an error in case the check failed
-            throw new Error('The "cookie" parameter is not a string or missing.');
+            throw new Error('The "cookie" parameter is not a string or missing.')
         }
 
         // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
-        const endpoint = encodeURI(`https://steamcommunity.com/market/pricehistory/?currency=${this.currency}&appid=${appid}&market_hash_name=${market_hash_name}`);
+        const endpoint = encodeURI(`https://steamcommunity.com/market/pricehistory/?currency=${this.currency}&appid=${appid}&market_hash_name=${market_hash_name}`)
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
         return axios.get(endpoint, { headers: { Cookie: `steamLoginSecure=${cookie}` }}).then(response => {
             // Handle the callback parameter for returning the response object
             if (typeof callback === 'function') {
                 // Return the callback with the response data
-                callback(null, response.data);
+                callback(null, response.data)
             }
 
             // Return the response data as a Promise
-            return response.data;
+            return response.data
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
-                callback(error, null);
+                callback(error, null)
             } else {
                 // Throw the error 
-                throw error;
+                throw error
             }            
-        });
+        })
     }
 
     /**
@@ -199,51 +199,51 @@ class SteamMarketFetcher {
         // Type check the query parameter for matching a string
         if (typeof query !== 'string') {
             // Throw an error in case the check failed
-            throw new Error('The "query" parameter is not a string or missing.');
+            throw new Error('The "query" parameter is not a string or missing.')
         }
 
         // Type check the descriptions parameter for matching a string
         if (typeof descriptions !== 'number' || [0, 1].indexOf(descriptions) === -1) {
             // Throw an error in case the check failed
-            throw new Error(`Unexpected value "${descriptions}" for the "descriptions" parameter. Expected a numeric integer between 0 and 1.`);
+            throw new Error(`Unexpected value "${descriptions}" for the "descriptions" parameter. Expected a numeric integer between 0 and 1.`)
         }
 
         // Type check the appid parameter for matching a number
         if (typeof appid !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "appid" parameter is not a number or missing.');
+            throw new Error('The "appid" parameter is not a number or missing.')
         }
 
         // Type check the start parameter
         if (typeof start !== 'number' || !(start > -1)) {
-            throw new Error('The "start" parameter is an invalid number or missing.');
+            throw new Error('The "start" parameter is an invalid number or missing.')
         }
 
         //Encode the endpoint URL to prevent unescaped characters
-        const endpoint = encodeURI(`https://steamcommunity.com/market/search/render/?query=${query}&search_descriptions=${descriptions}&appid=${appid}&start=${start}&count=100&norender=1`);
+        const endpoint = encodeURI(`https://steamcommunity.com/market/search/render/?query=${query}&search_descriptions=${descriptions}&appid=${appid}&start=${start}&count=100&norender=1`)
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters.
         return axios.get(endpoint).then(response => {
             // Handle the callback parameter for returning the response object
             if (typeof callback === 'function') {
                 // Return the callback with the response data
-                callback(null, response.data.results);
+                callback(null, response.data.results)
             }
 
             // Return the response data as a Promise
-            return response.data.results;
+            return response.data.results
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
-                callback(error, null);
+                callback(error, null)
             } else {
                 // Throw the error 
-                throw error;
+                throw error
             }            
-        });
+        })
     }
 }
 
 // Export the SteamMarketFetcher Wrapper class
-module.exports = SteamMarketFetcher;
+module.exports = SteamMarketFetcher
