@@ -25,10 +25,16 @@ $ yarn add steam-market-fetcher
 
 ## Testing
 
-**Note**: Make sure you've supplied a valid `steamLoginSecure cookie` in the [test.js](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/test/test.js) file. 
+**Note**: Make sure you've supplied a valid `steamLoginSecure cookie` in the [test.js](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/test/test.js) file.
 
+Using [npm](https://docs.npmjs.com/cli/v8/commands/npm-run-script):
 ```bash
 $ npm test
+```
+
+Using [yarn](https://classic.yarnpkg.com/lang/en/docs/cli/run/):
+```bash
+$ yarn test
 ```
 
 ## Examples
@@ -47,7 +53,7 @@ import SteamMarketFetcher from 'steam-market-fetcher';
 
 ### Instantiating with the `currency` and `format` options.
 ```js
-const Fetcher = new SteamMarketFetcher({ 
+const Fetcher = new SteamMarketFetcher({
     currency: 'EUR',
     format: 'json'
 });
@@ -72,8 +78,8 @@ Fetcher.getItemPrice({
 ```js
 (async () => {
     try {
-        const image = await Fetcher.getItemImage({ 
-            market_hash_name: 'Mann Co. Supply Crate Key', 
+        const image = await Fetcher.getItemImage({
+            market_hash_name: 'Mann Co. Supply Crate Key',
             appid: 440
         });
 
