@@ -40,4 +40,4 @@ module.exports = {
     'QAR': 39,
     'CRC': 40,
     'UYU': 41
-};
+}
