@@ -1,5 +1,5 @@
 // Import the required dependencies for this class
-const axios = require('axios').default
+const axios = require('axios')
 
 // Require some utility functions
 const { setCurrency, setDataFormat, setCDN, getImageFromListing } = require('./lib/utils')
