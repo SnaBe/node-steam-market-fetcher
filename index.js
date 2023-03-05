@@ -60,17 +60,17 @@ class SteamMarketFetcher {
             if (typeof callback === 'function') {
                 // Return the callback with the response data
                 callback(null, response.data)
+            } else {
+                // Return the response data as a Promise
+                return response.data
             }
-
-            // Return the response data as a Promise
-            return response.data
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
                 callback(error, null)
             } else {
-                // Throw the error 
+                // Throw the error
                 throw error
             }            
         })
@@ -116,17 +116,17 @@ class SteamMarketFetcher {
             if (typeof callback === 'function') {
                 // Handle the callback parameter for returning the response object
                 callback(null, listingImage)
+            } else {
+                // Return the image as a Promise
+                return listingImage
             }
-
-            // Return the image as a Promise
-            return listingImage
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
                 callback(error, null)
             } else {
-                // Throw the error 
+                // Throw the error
                 throw error
             }
         })
@@ -169,17 +169,17 @@ class SteamMarketFetcher {
             if (typeof callback === 'function') {
                 // Return the callback with the response data
                 callback(null, response.data)
+            } else {
+                // Return the response data as a Promise
+                return response.data
             }
-
-            // Return the response data as a Promise
-            return response.data
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
                 callback(error, null)
             } else {
-                // Throw the error 
+                // Throw the error
                 throw error
             }            
         })
@@ -219,7 +219,7 @@ class SteamMarketFetcher {
             throw new Error('The "start" parameter is an invalid number or missing.')
         }
 
-        //Encode the endpoint URL to prevent unescaped characters
+        // Encode the endpoint URL to prevent unescaped characters
         const endpoint = encodeURI(`https://steamcommunity.com/market/search/render/?query=${query}&search_descriptions=${descriptions}&appid=${appid}&start=${start}&count=100&norender=1`)
 
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters.
@@ -228,17 +228,17 @@ class SteamMarketFetcher {
             if (typeof callback === 'function') {
                 // Return the callback with the response data
                 callback(null, response.data.results)
+            } else {
+                // Return the response data as a Promise
+                return response.data.results
             }
-
-            // Return the response data as a Promise
-            return response.data.results
         }).catch(error => {
             // Handle the callback parameter for returning the error
             if (typeof callback === 'function') {
                 // Return the callback with the error
                 callback(error, null)
             } else {
-                // Throw the error 
+                // Throw the error
                 throw error
             }            
         })
