@@ -1,4 +1,4 @@
 data
 test/**/*.js
-.eslintrc.js
+.eslintrc.json
 node_modules/

@@ -1,0 +1,38 @@
+{
+    "globals": {
+        "process": true
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "mocha": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "camelcase": [
+            "error"
+        ],
+        "eqeqeq": [
+            "error"
+        ],
+        "no-process-env": [
+            "off"
+        ]
+    }
+}
