@@ -26,7 +26,12 @@
             "never"
         ],
         "camelcase": [
-            "error"
+            "error",
+            {
+                "allow": [
+                    "market_hash_name"
+                ]
+            }
         ],
         "eqeqeq": [
             "error"
