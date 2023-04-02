@@ -13,21 +13,18 @@ class SteamMarketFetcher {
      * @param { any } options An object containing valid constructor options.
      * @param { string } options.currency Any currency used by the Steam Community Market, defaults to USD.
      * @param { string } options.format Any data format accepted by Steam, defaults to JSON.
-     * @param { any } options.CDN Steam CDN handler for CS:GO items and their image URLs.
+     * @param { CsgoCDN } options.CDN Steam CDN handler for CS:GO items and their image URLs.
      * @returns { SteamMarketFetcher } A fresh Steam Market Fetcher instance.
     */
-    constructor (options) {
-        // Options for different user needs
-        options = options || {}
-
+    constructor ({ currency = 'USD', format = 'json', CDN = null } = {}) {
         // The currency in which to return Steam Community Market prices
-        this.currency = setCurrency(options.currency) 
+        this.currency = setCurrency(currency) 
 
         // The format in which to return Steam Community Market data
-        this.format = setDataFormat(options.format)
+        this.format = setDataFormat(format)
 
         // The CDN to use for CSGO items
-        this.CDN = setCDN(options.CDN)
+        this.CDN = setCDN(CDN)
     }
     
     /**
@@ -72,7 +69,7 @@ class SteamMarketFetcher {
             } else {
                 // Throw the error
                 throw error
-            }            
+            }
         })
     }
 
@@ -81,11 +78,11 @@ class SteamMarketFetcher {
      * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
-     * @param { number } params.px The desired size of the item image in pixels, this is optional and defaults to 360px.
+     * @param { number } params.size The desired size of the item image in pixels, this is optional and defaults to 360px.
      * @param { Function } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<string> | Function } A Steam Community or Steam CDN URL of the item image.
     */
-    getItemImage ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, px = 360, callback } = {}) {
+    getItemImage ({ market_hash_name = 'AK-47 | Redline (Field-Tested)', appid = 730, size = 360, callback } = {}) {
         // Type check the market_hash_name parameter for matching a string
         if (typeof market_hash_name !== 'string' || market_hash_name.length === 0) {
             // Throw an error in case the check failed
@@ -98,10 +95,10 @@ class SteamMarketFetcher {
             throw new Error('The "appid" parameter is not a number or missing.')
         }
 
-        // Type check the px parameter for matching a number
-        if (typeof px !== 'number') {
+        // Type check the size parameter for matching a number
+        if (typeof size !== 'number') {
             // Throw an error in case the check failed
-            throw new Error('The "px" parameter is not a number or missing.')
+            throw new Error('The "size" parameter is not a number or missing.')
         }
 
         // Encode the Steam Community Market endpoint for handling items with unique characters in their market_hash_name
@@ -110,7 +107,7 @@ class SteamMarketFetcher {
         // Make a GET request to the endpoint matching the market_hash_name and appid parameters
         return axios.get(endpoint).then(response => {
             // Get the item image from a Steam Community listing or the Steam CDN
-            const listingImage = getImageFromListing(this.CDN, market_hash_name, appid, response.data.results_html, px)
+            const listingImage = getImageFromListing(this.CDN, market_hash_name, appid, response.data.results_html, size)
 
             // Handle the callback parameter for returning the response object
             if (typeof callback === 'function') {
@@ -181,7 +178,7 @@ class SteamMarketFetcher {
             } else {
                 // Throw the error
                 throw error
-            }            
+            }
         })
     }
 
@@ -240,10 +237,10 @@ class SteamMarketFetcher {
             } else {
                 // Throw the error
                 throw error
-            }            
+            }
         })
     }
 }
 
-// Export the SteamMarketFetcher Wrapper class
+// Export the SteamMarketFetcher wrapper class
 module.exports = SteamMarketFetcher
