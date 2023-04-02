@@ -1,4 +1,4 @@
-// We'll use Mocha & Chai for testing the modules methods
+// We'll use Mocha and Chai for testing class methods
 const expect = require('chai').expect
 
 // Require the module itself
@@ -7,8 +7,8 @@ const SteamMarketFetcher = require('../index')
 
 // Create a new Steam Market Fetcher instance using our preferred dev options
 const Fetcher = new SteamMarketFetcher({
-    currency: 'EUR',
-    format: 'json'
+    currency: 'EUR', // Prices should be in euros
+    format: 'json' // Reponse data should be returned as JSON objects
 })
 
 // Our unit tests
@@ -27,15 +27,15 @@ describe('steam-market-fetcher tests', () => {
         // The function should return an object with the item's current price data
         it('should return the Steam Community market price for a Field-Tested AK-47 Asiimov', (done) => {
             // Get the price of the Field-Tested AK-47 Asiimov
-            Fetcher.getItemPrice({ market_hash_name: 'AK-47 | Asiimov (Field-Tested)', appid: 730, callback: (err, data) => {
+            Fetcher.getItemPrice({ market_hash_name: 'AK-47 | Asiimov (Field-Tested)', appid: 730, callback: (err, res) => {
                 // Error getting currency data
                 if (err) return done(err)
 
                 // The response should have status code 200 (ok),
                 // it should also be an object
                 // and must have a property named median_price 
-                expect(data).to.be.an('object')
-                expect(data).to.have.property('median_price')
+                expect(res).to.be.an('object')
+                expect(res).to.have.property('median_price')
 
                 // Call done to end the test when the callback is invoked
                 done()
@@ -43,19 +43,19 @@ describe('steam-market-fetcher tests', () => {
         })
     })
 
-    // Gets the item image  for a Steam Community Market item
+    // Gets the item image for a Steam Community Market item
     describe('getItemImage', () => {
         // The function should return a string with item's in-game image 
         it('should return an image of a Factory New Gut Knife Doppler', (done) => {
             // Get the item image for a Factory New Gut Knife Doppler
-            Fetcher.getItemImage({ market_hash_name: '★ Gut Knife | Doppler (Factory New)', appid: 730, callback: (err, data) => {
+            Fetcher.getItemImage({ market_hash_name: '★ Gut Knife | Doppler (Factory New)', appid: 730, callback: (err, res) => {
                 // Error getting the item's image
                 if (err) return done(err)
 
                 // The response should have status code 200 (ok),
                 // it should also be a string
-                expect(data).to.be.a('string')
-                expect(data).to.not.equal('No image available')
+                expect(res).to.be.a('string')
+                expect(res).to.not.equal('No image available')
 
                 // Call done to end the test when the callback is invoked
                 done()
@@ -69,7 +69,7 @@ describe('steam-market-fetcher tests', () => {
         // The function should return an array containing price history data for a Field-Tested AWP Wildfire
         it('should return the price history of a Field-Tested AWP Wildfire', (done) => {
             // Get the price history for a Field-Tested AWP Wildfire
-            Fetcher.getItemPriceHistory({ market_hash_name: 'AWP | Wildfire (Field-Tested)', appid: 730, cookie: process.env.STEAM_COOKIE, callback: (err, data) => {
+            Fetcher.getItemPriceHistory({ market_hash_name: 'AWP | Wildfire (Field-Tested)', appid: 730, cookie: process.env.STEAM_COOKIE, callback: (err, res) => {
                 // Error getting the item's price history
                 if (err) return done(err)
 
@@ -77,9 +77,9 @@ describe('steam-market-fetcher tests', () => {
                 // it should also be an object
                 // and must have a property named prices
                 // The prices property should be an array with any given length
-                expect(data).to.be.an('object')
-                expect(data).to.have.property('prices')
-                expect(data.prices).to.be.an('array')
+                expect(res).to.be.an('object')
+                expect(res).to.have.property('prices')
+                expect(res.prices).to.be.an('array')
 
                 // Call done to end the test when the callback is invoked
                 done()
@@ -92,13 +92,13 @@ describe('steam-market-fetcher tests', () => {
         // The function should return an array of Steam Community Market listings
         it('should return an array of Steam Community market listings', (done) => {
             // The market listings descriptions should include the query: Unusual Burning Flames
-            Fetcher.getMarketListings({ query: 'Unusual Burning Flames', descriptions: 1, appid: 440, start: 0, callback: (err, data) => {
+            Fetcher.getMarketListings({ query: 'Unusual Burning Flames', descriptions: 1, appid: 440, start: 0, callback: (err, res) => {
                 // Error getting Steam Community Market listings
                 if (err) return done(err)
 
                 // The response should have status code 200 (ok),
                 // it should also be an array with any given length
-                expect(data).to.be.an('array')
+                expect(res).to.be.an('array')
 
                 // Call done to end the test when the callback is invoked
                 done()
