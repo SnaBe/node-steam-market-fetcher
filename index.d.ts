@@ -6,7 +6,7 @@ export type PriceHistory = [ string, number, string ];
 
 // Constructor options for the SteamMarketFetcher class
 export interface SteamMarketOptions {
-    currency: string, // Currency options
+    currency?: string, // Currency options
     format?: string, // Data format options
     CDN?: SteamMarketCDN // Steam CDN options
 }
@@ -99,7 +99,7 @@ declare class SteamMarketFetcher {
      * @param { SteamMarketCDN } options.CDN Steam CDN handler for CS:GO items and their image URLs.
      * @returns { SteamMarketFetcher } A new Steam Market Fetcher instance.
     */
-    constructor({ currency, format, CDN }: SteamMarketOptions);
+    constructor({ currency, format, CDN }?: SteamMarketOptions);
 
     /**
      * Get the Steam Community Market price from the listing matching the `market_hash_name` parameter.
