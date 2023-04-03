@@ -88,7 +88,7 @@ export interface GetMarketListingsParameters {
 // Export the SteamMarketFetcher class as default
 export default SteamMarketFetcher;
 /**
- * A Node.js wrapper for the Steam Community Market API. 
+ * A Node.js wrapper for the Steam Community Market API.
  */
 declare class SteamMarketFetcher {
     /**
@@ -105,7 +105,7 @@ declare class SteamMarketFetcher {
      * Get the Steam Community Market price from the listing matching the `market_hash_name` parameter.
      * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
-     * @param { number } params.appid The unique app associated with the item's market_hash_name.
+     * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the method returns a promise.
      * @returns { Promise<GetItemPriceResponse> | void } An object containing Steam Community price data matching the market_hash_name parameter.
     */
@@ -114,7 +114,7 @@ declare class SteamMarketFetcher {
      * Fetches an image from the first Steam Community market listing matching the `market_hash_name` parameter.
      * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
-     * @param { number } params.appid The unique app associated with the item's market_hash_name.
+     * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { number } params.size The desired size of the item image in pixels, this is optional and defaults to 360px.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the method returns a promise.
      * @returns { Promise<string> | void } A Steam Community or csgo-cdn URL of the item image.
@@ -124,7 +124,7 @@ declare class SteamMarketFetcher {
      * Get an item's price history from the Steam Community listing matching the `market_hash_name` parameter.
      * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
-     * @param { number } params.appid The unique app associated with the item's market_hash_name.
+     * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { string } params.cookie A steamLoginSecure session cookie from Steamcommunity.com
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the method returns a promise.
      * @returns { Promise<GetItemPriceHistoryResponse> | void } The price history for the item matching the parameters.

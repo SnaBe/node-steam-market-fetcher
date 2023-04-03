@@ -1,19 +1,19 @@
-// We'll use Mocha and Chai for testing class methods
+// Require Mocha and Chai for unit testing class methods
 const expect = require('chai').expect
 
 // Require the module itself
 // Replace this with const SteamMarketFetcher = require('steam-market-fetcher'); if used outside of the module directory
 const SteamMarketFetcher = require('../index')
 
-// Create a new Steam Market Fetcher instance using our preferred dev options
+// Create a new Steam Market Fetcher instance using the preferred dev options
 const Fetcher = new SteamMarketFetcher({
     currency: 'EUR', // Prices should be in euros
     format: 'json' // Reponse data should be returned as JSON objects
 })
 
-// Our unit tests
+// The unit tests
 describe('steam-market-fetcher tests', () => {
-    // Test & verify that the target is an instance of the given constructor
+    // Test and verify that the target is an instance of the given constructor
     describe('instance of constructor', () => {
         // Instance should match class
         it('should be instance of steam-market-fetcher', () => {
@@ -45,11 +45,11 @@ describe('steam-market-fetcher tests', () => {
 
     // Gets the item image for a Steam Community Market item
     describe('getItemImage', () => {
-        // The function should return a string with item's in-game image 
+        // The function should return a string with the item's in-game image 
         it('should return an image of a Factory New Gut Knife Doppler', (done) => {
             // Get the item image for a Factory New Gut Knife Doppler
             Fetcher.getItemImage({ market_hash_name: '★ Gut Knife | Doppler (Factory New)', appid: 730, callback: (err, res) => {
-                // Error getting the item's image
+                // Error getting the image
                 if (err) return done(err)
 
                 // The response should have status code 200 (ok),
@@ -70,7 +70,7 @@ describe('steam-market-fetcher tests', () => {
         it('should return the price history of a Field-Tested AWP Wildfire', (done) => {
             // Get the price history for a Field-Tested AWP Wildfire
             Fetcher.getItemPriceHistory({ market_hash_name: 'AWP | Wildfire (Field-Tested)', appid: 730, cookie: process.env.STEAM_COOKIE, callback: (err, res) => {
-                // Error getting the item's price history
+                // Error getting the price history
                 if (err) return done(err)
 
                 // The response should have status code 200 (ok),
@@ -87,7 +87,7 @@ describe('steam-market-fetcher tests', () => {
         })
     })
 
-    // Gets a size of Steam Community Market listings
+    // Gets a list of Steam Community Market listings
     describe('getMarketListings', () => {
         // The function should return an array of Steam Community Market listings
         it('should return an array of Steam Community market listings', (done) => {
