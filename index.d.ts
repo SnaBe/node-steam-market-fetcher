@@ -1,17 +1,17 @@
-// Custom any-type for Steam related CDNs
+/** Custom any-type for Steam related CDNs. */
 export type SteamMarketCDN = any;
 
-// The PriceHistory array should contain a date, a price and an unknown string
+/** The PriceHistory array contains a date, a price and an unknown string. */
 export type PriceHistory = [ string, number, string ];
 
-// Constructor options for the SteamMarketFetcher class
+/** Constructor options for the SteamMarketFetcher class. */
 export interface SteamMarketOptions {
     currency?: string, // Currency options
     format?: string, // Data format options
     CDN?: SteamMarketCDN // Steam CDN options
 }
 
-// Response object for the getItemPrice method
+/** Response object for the getItemPrice method. */
 export interface GetItemPriceResponse {
     success: boolean, // If the request was a success
     lowest_price: string, // The lowest listing price
@@ -19,14 +19,14 @@ export interface GetItemPriceResponse {
     median_price: string // The median listing price
 }
 
-// Options for the getItemPrice method
+/** Parameter options for the getItemPrice method. */
 export interface GetItemPriceParameters {
     market_hash_name?: string, // The name of the item
     appid?: number, // The app id associated with the item
     callback?: (error: Error | null, response: GetItemPriceResponse | null) => void // Callback function
 }
 
-// Options for the getItemImage method
+/** Parameter options for the getItemImage method. */
 export interface GetItemImageParameters {
     market_hash_name?: string, // The name of the item
     appid?: number, // The app id associated with the item
@@ -34,7 +34,7 @@ export interface GetItemImageParameters {
     callback?: (error: Error | null, response: string | null) => void // Callback function
 }
 
-// Response object for the getItemPriceHistory method
+/** Response object for the getItemPriceHistory method. */
 export interface GetItemPriceHistoryResponse {
     success: boolean, // If the request was a success
     price_prefix: string, // For prices in USD or similar
@@ -42,7 +42,7 @@ export interface GetItemPriceHistoryResponse {
     prices: Array<PriceHistory> // The item's price history stored as a nested array
 }
 
-// Options for the getItemPriceHistory method
+/** Parameter options for the getItemPriceHistory method. */
 export interface GetItemPriceHistoryParameters {
     market_hash_name?: string, // The name of the item
     appid?: number, // The app id associated with the item
@@ -50,7 +50,7 @@ export interface GetItemPriceHistoryParameters {
     callback?: (error: Error | null, response: GetItemPriceHistoryResponse | null) => void // Callback function
 }
 
-// Steam Community Market listing object
+/** An object that represents a listing on the Steam Community Market. */
 export interface SteamMarketListing {
     name: string, // The item's display name
     hash_name: string, // The item's hash name
@@ -76,7 +76,7 @@ export interface SteamMarketListing {
     sale_price_text: string // The sale price as a string
 }
 
-// Options for the getMarketListings method
+/** Parameter options for the getMarketListings method. */
 export interface GetMarketListingsParameters {
     query?: string, // Query options
     descriptions?: 0 | 1, // Include item description in query
