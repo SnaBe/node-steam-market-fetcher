@@ -1,13 +1,13 @@
 # steam-market-fetcher
 A Node.js wrapper for the Steam Community Market API.
 
-[![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
-[![node version](https://img.shields.io/node/v/steam-market-fetcher)](https://nodejs.org/en/about/releases/)
-[![npm test](https://img.shields.io/github/actions/workflow/status/SnaBe/node-steam-market-fetcher/test.yml?logo=github&branch=master)](https://github.com/SnaBe/node-steam-market-fetcher/actions/workflows/test.yml)
-[![dependencies](https://img.shields.io/librariesio/release/npm/steam-market-fetcher)](https://www.npmjs.com/package/steam-market-fetcher)
-[![npm downloads](https://img.shields.io/npm/dm/steam-market-fetcher.svg)](https://npmjs.com/package/steam-market-fetcher)
-[![license](https://img.shields.io/npm/l/steam-market-fetcher.svg)](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/LICENSE)
-[![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
+[![npm version](https://img.shields.io/npm/v/steam-market-fetcher.svg?style=flat-square)](https://npmjs.com/package/steam-market-fetcher)
+[![node version](https://img.shields.io/node/v/steam-market-fetcher?style=flat-square)](https://nodejs.org/en/about/releases/)
+[![npm test](https://img.shields.io/github/actions/workflow/status/SnaBe/node-steam-market-fetcher/test.yml?logo=github&branch=master&style=flat-square)](https://github.com/SnaBe/node-steam-market-fetcher/actions/workflows/test.yml)
+[![dependencies](https://img.shields.io/librariesio/release/npm/steam-market-fetcher?style=flat-square)](https://www.npmjs.com/package/steam-market-fetcher)
+[![npm downloads](https://img.shields.io/npm/dm/steam-market-fetcher.svg?style=flat-square)](https://npmjs.com/package/steam-market-fetcher)
+[![license](https://img.shields.io/npm/l/steam-market-fetcher.svg?style=flat-square)](https://github.com/SnaBe/node-steam-market-fetcher/blob/master/LICENSE)
+[![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg?style=flat-square)](https://www.paypal.me/snabe)
 
 ## Installation
 
