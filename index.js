@@ -10,7 +10,7 @@ const { setCurrency, setDataFormat, setCDN, getImageFromListing } = require('./l
 class SteamMarketFetcher {
     /**
      * Creates a new instance of the Steam Market Fetcher.
-     * @param { any } options An object containing valid constructor options.
+     * @param { SteamMarketOptions } options An object containing valid constructor options.
      * @param { string } options.currency Any currency used by the Steam Community Market.
      * @param { string } options.format Any data format accepted by Steam, defaults to JSON.
      * @param { SteamMarketCDN } options.CDN Steam CDN handler for CS:GO items and their image URLs.
@@ -29,7 +29,7 @@ class SteamMarketFetcher {
     
     /**
      * Get the Steam Community Market price from the listing matching the `market_hash_name` argument.
-     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { GetItemPriceParameters } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash name.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
@@ -75,7 +75,7 @@ class SteamMarketFetcher {
 
     /**
      * Fetches an image from the first Steam Community market listing matching the `market_hash_name` argument.
-     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { GetItemImageParameters } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { number } params.size The desired size of the item image in pixels, this is optional and defaults to 360px.
@@ -131,7 +131,7 @@ class SteamMarketFetcher {
 
     /**
      * Get an item's price history from the Steam Community listing matching the `market_hash_name` argument. 
-     * @param { any } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { GetItemPriceHistoryParameters } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's name.
      * @param { number } params.appid The unique app to the item's market_hash_name.
      * @param { string } params.cookie A steamLoginSecure cookie from Steam Community.com session.
@@ -184,7 +184,7 @@ class SteamMarketFetcher {
 
     /**
      * Get the current Steam Community Market listings for any given Steam app. 
-     * @param { any } params An object of valid arguments for the getMarketListings method. All are "optional" and have default values.
+     * @param { GetMarketListingsParameters } params An object of valid arguments for the getMarketListings method. All are "optional" and have default values.
      * @param { string } params.query The query value narrows down the search, optional parameter that defaults to none.
      * @param { number } params.descriptions If set to 1, includes the query in the item's description property.
      * @param { number } params.appid The app in which to fetch market listings for.

@@ -93,7 +93,7 @@ export default SteamMarketFetcher;
 declare class SteamMarketFetcher {
     /**
      * Creates a new SteamMarketFetcher instance.
-     * @param { any } options An object containing valid constructor options.
+     * @param { SteamMarketOptions } options An object containing valid constructor options.
      * @param { string } options.currency Any currency used by the Steam Community Market, defaults to USD.
      * @param { string } options.format Any data format accepted by Steam, defaults to JSON.
      * @param { SteamMarketCDN } options.CDN Steam CDN handler for CS:GO items and their image URLs.
@@ -103,7 +103,7 @@ declare class SteamMarketFetcher {
 
     /**
      * Get the Steam Community Market price from the listing matching the `market_hash_name` parameter.
-     * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
+     * @param { GetItemPriceParameters } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
      * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the method returns a promise.
@@ -112,7 +112,7 @@ declare class SteamMarketFetcher {
     getItemPrice({ market_hash_name, appid, callback }?: GetItemPriceParameters): Promise<GetItemPriceResponse> | void;
     /**
      * Fetches an image from the first Steam Community market listing matching the `market_hash_name` parameter.
-     * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
+     * @param { GetItemImageParameters } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
      * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { number } params.size The desired size of the item image in pixels, this is optional and defaults to 360px.
@@ -122,7 +122,7 @@ declare class SteamMarketFetcher {
     getItemImage({ market_hash_name, appid, size, callback }?: GetItemImageParameters): Promise<string> | void;
     /**
      * Get an item's price history from the Steam Community listing matching the `market_hash_name` parameter.
-     * @param { any } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
+     * @param { GetItemPriceHistoryParameters } params An object of valid parameters for the `getItemPriceHistory` method. All are "optional" and have default values.
      * @param { string } params.market_hash_name The marketable item's hash name.
      * @param { number } params.appid The unique app id associated with the item's market_hash_name.
      * @param { string } params.cookie A steamLoginSecure session cookie from Steamcommunity.com
@@ -132,7 +132,7 @@ declare class SteamMarketFetcher {
     getItemPriceHistory({ market_hash_name, appid, cookie, callback }?: GetItemPriceHistoryParameters): Promise<GetItemPriceHistoryResponse> | void;
     /**
      * Get the current Steam Community Market listings for any given Steam app.
-     * @param { any } params An object of valid parameters for the getMarketListings method. All are "optional" and have default values.
+     * @param { GetMarketListingsParameters } params An object of valid parameters for the getMarketListings method. All are "optional" and have default values.
      * @param { string } params.query The query value narrows down the search, optional parameter that defaults to none.
      * @param { number } params.descriptions If set to 1, includes the query in the item's description property.
      * @param { number } params.appid The app in which to fetch market listings for.
