@@ -29,7 +29,8 @@
             "error",
             {
                 "allow": [
-                    "market_hash_name"
+                    "market_hash_name",
+                    "item_nameid"
                 ]
             }
         ],
