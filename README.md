@@ -94,7 +94,7 @@ There are some more examples available in the [test](https://github.com/SnaBe/no
 
 ## Documentation
 
-[Version 2.0.0](https://github.com/SnaBe/node-steam-market-fetcher/releases/tag/v2.0.0) includes major changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
+[Version 2.1.0](https://github.com/SnaBe/node-steam-market-fetcher/releases/tag/v2.1.0) includes minor changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
 
 ## License
 
