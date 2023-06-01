@@ -53,7 +53,7 @@ import SteamMarketFetcher from 'steam-market-fetcher';
 
 ### Instantiating with the `currency` and `format` options.
 ```js
-const Fetcher = new SteamMarketFetcher({
+const market = new SteamMarketFetcher({
     currency: 'EUR',
     format: 'json'
 });
@@ -62,7 +62,7 @@ const Fetcher = new SteamMarketFetcher({
 ### Asynchronous requests with `callbacks`.
 
 ```js
-Fetcher.getItemPrice({
+market.getItemPrice({
     market_hash_name: 'AK-47 | Redline (Field-Tested)',
     appid: 730,
     callback: (err, price) => {
@@ -78,7 +78,7 @@ Fetcher.getItemPrice({
 ```js
 (async () => {
     try {
-        const image = await Fetcher.getItemImage({
+        const image = await market.getItemImage({
             market_hash_name: 'Mann Co. Supply Crate Key',
             appid: 440
         });
