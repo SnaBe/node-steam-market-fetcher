@@ -426,9 +426,9 @@ export default SteamMarketFetcher;
 declare class SteamMarketFetcher {
     /**
      * Creates a new SteamMarketFetcher instance.
-     * @param { SteamMarketOptions } options An object containing valid constructor options.
-     * @param { string } options.currency Any currency used by the Steam Community Market, defaults to USD.
-     * @param { string } options.format Any data format accepted by Steam, defaults to JSON.
+     * @param { SteamMarketOptions } options An object of valid options for the SteamMarketFetcher class constructor.
+     * @param { string } options.currency Any valid currency the Steam Community Market uses, defaults to USD.
+     * @param { string } options.format Any valid data format accepted by Steam, defaults to JSON.
      * @param { SteamMarketCDN } options.CDN Steam CDN handler for CS:GO items and their image URLs.
      * @returns { SteamMarketFetcher } A new SteamMarketFetcher instance.
     */
@@ -466,11 +466,11 @@ declare class SteamMarketFetcher {
     /**
      * Get the current Steam Community Market listings for any given Steam app.
      * @param { GetMarketListingsParameters } params An object of valid arguments for the `getMarketListings` method. All are "optional" and have default values.
-     * @param { string } params.query The query value narrows down the search, optional parameter that defaults to an empty state.
+     * @param { string } params.query The query value narrows down the search, an optional parameter that defaults to an empty state.
      * @param { number } params.descriptions If set to 1, includes the query in the item's description when searching for matches.
      * @param { number } params.appid The app in which to fetch market listings for.
-     * @param { number } params.start The market listing from which to start the request, optional parameter that defaults to 0 (the first items listed on the market for that app).
-     * @param { number } params.count The maximum number of items to be returned by the request, optional parameter that defaults to 100.
+     * @param { number } params.start The market listing from which to start the request, an optional parameter that defaults to 0 (the first items listed on the market for that app).
+     * @param { number } params.count The maximum number of items to be returned by the request, an optional parameter that defaults to 100.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the method returns a promise.
      * @returns { Promise<GetMarketListingsResponse> | void } An array of market listings matching the `query` and `appid` arguments.
     */
@@ -510,8 +510,8 @@ declare class SteamMarketFetcher {
     /**
      * Get the most popular Steam Community Market listings.
      * @param { GetPopularListingsParameters } params An object of valid arguments for the `getPopularListings` method. All are "optional" and have default values.
-     * @param { number } params.start The market listing from which to start the request, optional parameter that defaults to 0 (the first popular item listed on the market).
-     * @param { number } params.count The maximum number of items to be returned by the request, optional parameter that defaults to 100.
+     * @param { number } params.start The market listing from which to start the request, an optional parameter that defaults to 0 (the first popular item listed on the market).
+     * @param { number } params.count The maximum number of items to be returned by the request, an optional parameter that defaults to 100.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetPopularListingsResponse> | void } An object that contains the most popular Steam Community Market listings.
      */
