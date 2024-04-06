@@ -1,6 +1,6 @@
 {
 	"name": "steam-market-fetcher",
-	"version": "2.1.3",
+	"version": "3.0.0",
 	"description": "A Node.js wrapper for the Steam Community Market API.",
 	"main": "index.js",
 	"types": "index.d.ts",
