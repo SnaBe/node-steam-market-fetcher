@@ -1,8 +1,8 @@
 // Import the required dependencies for the SteamMarketFetcher class
-const axios = require('axios')
+import axios from 'axios'
 
 // Require some utility functions
-const { setCurrency, setDataFormat, setCDN, getImageFromListing } = require('./lib/utils')
+import { setCurrency, setDataFormat, setCDN, getImageFromListing } from './lib/utils.js'
 
 /**
  * A Node.js wrapper for the Steam Community Market API.
@@ -453,7 +453,7 @@ class SteamMarketFetcher {
 
     /**
      * Get the most recent Steam Community Market listings.
-     * @param { GetRecentListingsParameters } params An object of valid arguments for the `getItemHistogram` method. All are "optional" and have default values.
+     * @param { GetRecentListingsParameters } params An object of valid arguments for the `getRecentListings` method. All are "optional" and have default values.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetRecentListingsResponse> | void } An object that contains the most recent Steam Community Market listings.
      */
@@ -485,4 +485,4 @@ class SteamMarketFetcher {
 }
 
 // Export the SteamMarketFetcher wrapper class
-module.exports = SteamMarketFetcher
+export default SteamMarketFetcher

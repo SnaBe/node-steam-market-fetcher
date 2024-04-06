@@ -1,6 +1,6 @@
 // Currencies used by the Steam Community Market
 // USD is the default option
-module.exports = {
+export default {
     'USD': 1, // United States Dollar
     'GBP': 2, // Pound Sterling
     'EUR': 3, // Euro

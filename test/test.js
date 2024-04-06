@@ -1,9 +1,9 @@
 // Require Mocha and Chai for unit testing class methods
-const expect = require('chai').expect
+import { expect } from 'chai'
 
 // Require the module itself
 // Replace this with const SteamMarketFetcher = require('steam-market-fetcher'); if used outside of the module directory
-const SteamMarketFetcher = require('../index')
+import SteamMarketFetcher from '../index.js'
 
 // Create a new Steam Market Fetcher instance using the preferred dev options
 const market = new SteamMarketFetcher({

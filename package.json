@@ -4,6 +4,7 @@
 	"description": "A Node.js wrapper for the Steam Community Market API.",
 	"main": "index.js",
 	"types": "index.d.ts",
+	"type": "module",
 	"scripts": {
 		"test": "mocha --require dotenv/config --timeout 10000",
 		"fix": "eslint -c .eslintrc.json . --fix",
@@ -43,13 +44,13 @@
 		"csgo-cdn": "^1.2.0"
 	},
 	"devDependencies": {
-		"chai": "^4.3.10",
-		"dotenv": "^16.3.1",
-		"eslint": "^8.56.0",
-		"mocha": "^10.2.0",
+		"chai": "^5.1.0",
+		"dotenv": "^16.4.5",
+		"eslint": "^9.0.0",
+		"mocha": "^10.4.0",
 		"steam-totp": "^2.1.2",
-		"steam-user": "^5.0.4",
-		"typescript": "^5.3.3"
+		"steam-user": "^5.0.8",
+		"typescript": "^5.4.4"
 	},
 	"engines": {
 		"node": ">=16.0.0"

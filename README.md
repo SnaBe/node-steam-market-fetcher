@@ -39,13 +39,7 @@ $ yarn test
 
 ## Examples
 
-### Importing with `CommonJS`
-
-```js
-const SteamMarketFetcher = require('steam-market-fetcher');
-```
-
-### or with `ES6's import` statement.
+### Importing with ES6's `import` statement.
 
 ```js
 import SteamMarketFetcher from 'steam-market-fetcher';
