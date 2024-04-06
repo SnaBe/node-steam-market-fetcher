@@ -84,7 +84,7 @@ market.getItemPrice({
 })();
 ```
 
-There are some more examples available in the [test](https://github.com/SnaBe/node-steam-market-fetcher/tree/master/test) directory.
+Some more examples are available in the [test](https://github.com/SnaBe/node-steam-market-fetcher/tree/master/test) directory.
 
 ## Documentation
 
@@ -94,4 +94,4 @@ There are some more examples available in the [test](https://github.com/SnaBe/no
 
 [MIT](LICENSE)
 
-Copyright 2023, Simon Sørensen
+Copyright 2024, Simon Sørensen
