@@ -29,7 +29,7 @@ class SteamMarketFetcher {
     
     /**
      * Get the market price from the first listing that matches the `market_hash_name` and `appid` arguments.
-     * @param { GetItemPriceParameters } params An object of valid parameters for the `getItemPrice` method. All are "optional" and have default values.
+     * @param { GetItemPriceParameters } params An object of valid parameters for the `getItemPrice` method. All are optional and have default values.
      * @param { string } params.market_hash_name The item's universal market name.
      * @param { number } params.appid The app that owns the item.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
@@ -75,7 +75,7 @@ class SteamMarketFetcher {
 
     /**
      * Retrieves an image URL from the first market listing that matches the `market_hash_name` and `appid` arguments.
-     * @param { GetItemImageParameters } params An object of valid arguments for the `getItemImage` function. All are "optional" and have default values.
+     * @param { GetItemImageParameters } params An object of valid arguments for the `getItemImage` function. All are optional and have default values.
      * @param { string } params.market_hash_name The item's universal market name.
      * @param { number } params.appid The app that owns the item.
      * @param { number } params.size Optional parameter for the desired image `size`, defaults to 360x360 pixels.
@@ -131,10 +131,10 @@ class SteamMarketFetcher {
 
     /**
      * Get an item's price history from the first market listing that matches the `market_hash_name` and `appid` arguments. 
-     * @param { GetItemPriceHistoryParameters } params An object of valid arguments for the `getItemPriceHistory` function. All are "optional" and have default values.
+     * @param { GetItemPriceHistoryParameters } params An object of valid arguments for the `getItemPriceHistory` function. All are optional and have default values.
      * @param { string } params.market_hash_name The item's universal market name.
      * @param { number } params.appid The app that owns the item.
-     * @param { string } params.cookie A steamLoginSecure `cookie` from Steamcommunity.com session. This parameter is required as you must be logged into Steam to perform the request.
+     * @param { string } params.cookie A steamLoginSecure `cookie` from your Steamcommunity.com session. This parameter is required as you must be logged into Steam to perform this request.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetItemPriceHistoryResponse> | void } The price history for the item matching the `market_hash_name` and `appid` arguments.
     */
@@ -184,7 +184,7 @@ class SteamMarketFetcher {
 
     /**
      * Get the current Steam Community Market listings for any given Steam app.
-     * @param { GetMarketListingsParameters } params An object of valid arguments for the `getMarketListings` method. All are "optional" and have default values.
+     * @param { GetMarketListingsParameters } params An object of valid arguments for the `getMarketListings` method. All are optional and have default values.
      * @param { string } params.query The query value narrows down the search, an optional parameter that defaults to an empty state.
      * @param { number } params.descriptions If set to 1, includes the query in the item's description when searching for matches.
      * @param { number } params.appid The app that owns the items.
@@ -251,7 +251,7 @@ class SteamMarketFetcher {
 
     /**
      * Get a list of Steam Community Market order activities for a specific item.
-     * @param { GetItemActivityParameters } params An object of valid arguments for the `getItemActivity` method. All are "optional" and have default values.
+     * @param { GetItemActivityParameters } params An object of valid arguments for the `getItemActivity` method. All are optional and have default values.
      * @param { string } params.item_nameid The `nameid` of the item.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetItemActivityResponse> | void } An array of order activities that matches the `item_nameid` argument.
@@ -290,7 +290,7 @@ class SteamMarketFetcher {
 
     /**
      * Get a Steam Community Market order histogram for a specific item.
-     * @param { GetItemHistogramParameters } params An object of valid arguments for the `getItemHistogram` method. All are "optional" and have default values.
+     * @param { GetItemHistogramParameters } params An object of valid arguments for the `getItemHistogram` method. All are optional and have default values.
      * @param { string } params.item_nameid The `nameid` of the item.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetItemHistogramResponse> | void } A histogram object for buy and sell orders that matches the `item_nameid` argument.
@@ -329,8 +329,8 @@ class SteamMarketFetcher {
 
     /**
      * Get your own Steam Community Market history.
-     * @param { GetMyHistoryParameters } params An object of valid arguments for the `getMyHistory` method. All are "optional" and have default values.
-     * @param { string } params.cookie A steamLoginSecure `cookie` obtained from Steamcommunity.com. This parameter is required as you must be logged into Steam to perform the request.
+     * @param { GetMyHistoryParameters } params An object of valid arguments for the `getMyHistory` method. All are optional and have default values.
+     * @param { string } params.cookie A steamLoginSecure `cookie` from your Steamcommunity.com session. This parameter is required as you must be logged into Steam to perform this request.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetMyHistoryResponse> | void } An object that contains your Steam Community Market history.
      */
@@ -368,8 +368,8 @@ class SteamMarketFetcher {
 
     /**
      * Get your own Steam Community Market listings.
-     * @param { GetMyListingsParameters } params An object of valid arguments for the `getMyListings` method. All are "optional" and have default values.
-     * @param { string } params.cookie A steamLoginSecure `cookie` obtained from Steamcommunity.com. This parameter is required as you must be logged into Steam to perform the request.
+     * @param { GetMyListingsParameters } params An object of valid arguments for the `getMyListings` method. All are optional and have default values.
+     * @param { string } params.cookie A steamLoginSecure `cookie` from your Steamcommunity.com session. This parameter is required as you must be logged into Steam to perform this request.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetMyListingsResponse> | void } An object that contains your Steam Community Market listings.
      */
@@ -407,7 +407,7 @@ class SteamMarketFetcher {
 
     /**
      * Get the most popular Steam Community Market listings.
-     * @param { GetMyListingsParameters } params An object of valid arguments for the `getPopularListings` method. All are "optional" and have default values.
+     * @param { GetMyListingsParameters } params An object of valid arguments for the `getPopularListings` method. All are optional and have default values.
      * @param { number } params.start The market listing from which to start the request, an optional parameter that defaults to 0 (the first popular item listed on the market).
      * @param { number } params.count The maximum number of items to be returned by the request, an optional parameter that defaults to 100.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
@@ -453,7 +453,7 @@ class SteamMarketFetcher {
 
     /**
      * Get the most recent Steam Community Market listings.
-     * @param { GetRecentListingsParameters } params An object of valid arguments for the `getRecentListings` method. All are "optional" and have default values.
+     * @param { GetRecentListingsParameters } params An object of valid arguments for the `getRecentListings` method. All are optional and have default values.
      * @param { void } [params.callback] Optional, called when a response is available. If omitted the function returns a promise.
      * @returns { Promise<GetRecentListingsResponse> | void } An object that contains the most recent Steam Community Market listings.
      */
