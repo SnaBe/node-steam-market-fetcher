@@ -7,8 +7,8 @@
 	"type": "module",
 	"scripts": {
 		"test": "mocha --require dotenv/config --timeout 10000",
-		"fix": "eslint -c .eslintrc.json . --fix",
-		"lint": "eslint -c .eslintrc.json ."
+		"fix": "eslint -c eslint.config.js . --fix",
+		"lint": "eslint -c eslint.config.js ."
 	},
 	"repository": {
 		"type": "git",
