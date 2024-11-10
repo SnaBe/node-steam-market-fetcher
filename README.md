@@ -88,7 +88,7 @@ Some more examples are available in the [test](https://github.com/SnaBe/node-ste
 
 ## Documentation
 
-[Version 3.0.0](https://github.com/SnaBe/node-steam-market-fetcher/releases/tag/v2.1.0) includes breaking changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
+[Version 3.0.0](https://github.com/SnaBe/node-steam-market-fetcher/releases/tag/v3.0.0) includes breaking changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-steam-market-fetcher/wiki) for further documentation.
 
 ## License
 
